@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>student  result prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>student result prediction system</h1>
+    
+    <p> Enter the student details below to predict whether
+        the student will pass or fail.</p>
+    
+    <form action = "/predict" method = "POST">
+
+
+      <label for="school">School:</label>
+
+<select name="school" id="school" required>
+    <option value="">Select your school</option>
+    <option value="ABC School">GP</option>
+    <option value="XYZ School">MS</option>
+    
+</select>
+
+        <br><br>
+
+
+        <label for="sex">Gender:</label>
+        <select name="sex" id="sex" required>
+            <option value="">Select Gender</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+        </select>
+
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age"
+               min="1" max="50" required>
+        
+        <br><br>
+
+         
+
+        <label for="studytime">weekly Study Time:</label>
+        <select name="studytime" id="studytime" required>
+            <option value="">Select Weekly Study Time</option>
+            <option value="1">Less than 2 hours</option>
+            <option value="2">2 to 5 hours</option>
+            <option value="3">5 to 10 hours</option>
+            <option value="4">More than 10 hours</option>>
+        </select>
+
+
+        <br><br>
+
+        <label for="failures">Past Class Failures:</label>
+        <input type="number" name="failures" id="failures"
+               min="0" required>
+
+        <br><br>
+
+        <label for="absences">Absences:</label>
+        <input type="number" name="absences" id="absences"
+               min="0" required>
+
+        <br><br>
+
+
+        <button type = "submit">Predict result</button>
+    </form>
+    
+</body>
+</html>
